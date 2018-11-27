@@ -8,8 +8,8 @@
 		"websocket-consumer",
 		"actioncable-consumer"
 	],
-	"version": "0.0.1",
-	"description": "A react wrapper for working with rails actioncable.",
+	"version": "1.0.0",
+	"description": "A react wrapper for working with rails actioncable. Requires react v16.3 and above.",
 	"main": "lib/index.js",
 	"repository": {
 		"type": "git",
@@ -21,9 +21,27 @@
 	"author": "Sajeev Ramasamy <thorion3006@gmail.com>",
 	"license": "MIT",
 	"private": false,
-	"dependencies": {
-		"actioncable": "^5.2.1",
+	"peerDependencies": {
 		"prop-types": "^15.6.2",
 		"react": "^16.6.3"
+	},
+	"dependencies": {
+		"actioncable": "^5.2.1"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.0.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"path": "^0.12.7",
+		"prop-types": "^15.6.2",
+		"react": "^16.6.3",
+		"webpack": "^4.26.1",
+		"webpack-cli": "^3.1.2"
+	},
+	"scripts": {
+		"build": "webpack",
+		"pub": "yarn run build && yarn publish"
 	}
 }

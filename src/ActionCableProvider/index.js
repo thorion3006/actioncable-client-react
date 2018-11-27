@@ -15,6 +15,12 @@ class ActionCableProvider extends Component {
     }
   }
 
+  static propTypes = {
+    cable: PropTypes.object,
+    url: PropTypes.string,
+    children: PropTypes.node.isRequired
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (
       this.props.cable === prevProps.cable &&
@@ -49,11 +55,5 @@ class ActionCableProvider extends Component {
     );
   }
 }
-
-ActionCableProvider.propTypes = {
-  cable: PropTypes.object,
-  url: PropTypes.string,
-  children: PropTypes.node.isRequired
-};
 
 export { ActionCableProvider, Consumer };

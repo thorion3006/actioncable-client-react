@@ -12,3 +12,7 @@ yarn-error.log*
 
 # testing
 /coverage
+
+# compilers
+webpack.config.js
+.babelrc

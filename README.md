@@ -1,4 +1,4 @@
-A react wrapper for working with rails actioncable.
+A react wrapper for working with rails actioncable. Requires react v16.3 and above.
 
 # Install
 

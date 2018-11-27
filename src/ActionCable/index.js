@@ -5,12 +5,22 @@ import PropTypes from "prop-types";
 import { Consumer } from "../ActionCableProvider";
 
 class ActionCable extends PureComponent {
-  constructor(props, context) {
-    super(props, context);
-    this.state = { subscribedChannel: null };
-    this.send = this.send.bind(this);
-    this.perform = this.perform.bind(this);
+
+  static propTypes = {
+    onReceived: PropTypes.func,
+    onInitialized: PropTypes.func,
+    onConnected: PropTypes.func,
+    onDisconnected: PropTypes.func,
+    onRejected: PropTypes.func,
+    children: PropTypes.any,
+    cable: PropTypes.object.isRequired,
+    channel: PropTypes.string.isRequired,
+    room: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   }
+
+  state = {
+    subscribedChannel: null
+  };
 
   componentDidMount() {
     const {
@@ -52,14 +62,14 @@ class ActionCable extends PureComponent {
     }
   }
 
-  send(data) {
+  send = data => {
     if (!this.state.subscribedChannel) {
       throw new Error("ActionCable component unloaded");
     }
     this.state.subscribedChannel.send(data);
   }
 
-  perform(action, data) {
+  perform = (action, data) => {
     if (!this.state.subscribedChannel) {
       throw new Error("ActionCable component unloaded");
     }
@@ -74,18 +84,6 @@ class ActionCable extends PureComponent {
     return childrenWithProps || null;
   }
 }
-
-ActionCable.propTypes = {
-  onReceived: PropTypes.func,
-  onInitialized: PropTypes.func,
-  onConnected: PropTypes.func,
-  onDisconnected: PropTypes.func,
-  onRejected: PropTypes.func,
-  children: PropTypes.any,
-  cable: PropTypes.object.isRequired,
-  channel: PropTypes.string.isRequired,
-  room: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};
 
 export default props => (
 	<Consumer>{cable => <ActionCable {...props} cable={cable} />}</Consumer>
