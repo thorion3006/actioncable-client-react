@@ -1,0 +1,29 @@
+{
+	"name": "actioncable-react-es6",
+	"keywords": [
+		"react",
+		"actioncable",
+		"react-rails",
+		"websockets",
+		"websocket-consumer",
+		"actioncable-consumer"
+	],
+	"version": "0.0.1",
+	"description": "A react wrapper for working with rails actioncable.",
+	"main": "lib/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/thorion3006/actioncable-react-es6.git"
+	},
+	"bugs": {
+		"url": "https://github.com/thorion3006/actioncable-react-es6/issues"
+	},
+	"author": "Sajeev Ramasamy <thorion3006@gmail.com>",
+	"license": "MIT",
+	"private": false,
+	"dependencies": {
+		"actioncable": "^5.2.1",
+		"prop-types": "^15.6.2",
+		"react": "^16.6.3"
+	}
+}
