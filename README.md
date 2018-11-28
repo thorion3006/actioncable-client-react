@@ -2,11 +2,11 @@ A react wrapper for working with rails actioncable. Requires react v16.3 and abo
 
 # Install
 
-`npm i --save actioncable-react-es6`
+`npm i --save actioncable-client-react`
 
 or
 
-`yarn add actioncable-react-es6`
+`yarn add actioncable-client-react`
 
 # Usage
 
@@ -14,7 +14,7 @@ or
 
 ```javascript
 import React, { PureComponent } from 'react'
-import { ActionCable } from 'actioncable-react-es6'
+import { ActionCable } from 'actioncable-client-react'
 
 class chatRoom extends PureComponent {
 	state = {
@@ -71,45 +71,45 @@ export default chatRoom
 With a url prop:
 
 ```javascript
-import { ActionCableProvider } from 'actioncable-react-es6'
-import ChatRoom from './chatRoom'
+import { ActionCableProvider } from "actioncable-client-react";
+import ChatRoom from "./chatRoom";
 
 // With jwt authentication
-const WSS_URL = `wss://example.com/cable?${YOUR_TOKEN}`
+const WSS_URL = `wss://example.com/cable?${YOUR_TOKEN}`;
 
 // Without authentication
-const WSS_URL = `wss://example.com/cable`
+const WSS_URL = `wss://example.com/cable`;
 
-export default function Container (props) {
-    return (
-        <ActionCableProvider url={WSS_URL}>
-            <ChatRoom />
-        </ActionCableProvider>
-    )
+export default function Container(props) {
+  return (
+    <ActionCableProvider url={WSS_URL}>
+      <ChatRoom />
+    </ActionCableProvider>
+  );
 }
 ```
 
 With a custom cable:
 
 ```javascript
-import { ActionCableProvider } from 'actioncable-react-es6'
-import { ActionCable } from 'actioncable'
-import ChatRoom from './chatRoom'
+import { ActionCableProvider } from "actioncable-client-react";
+import { ActionCable } from "actioncable";
+import ChatRoom from "./chatRoom";
 
 // With jwt authentication
-const WSS_URL = `wss://example.com/cable?${YOUR_TOKEN}`
+const WSS_URL = `wss://example.com/cable?${YOUR_TOKEN}`;
 
 // Without authentication
-const WSS_URL = `wss://example.com/cable`
+const WSS_URL = `wss://example.com/cable`;
 
-const cable = ActionCable.createConsumer(WSS_URL)
+const cable = ActionCable.createConsumer(WSS_URL);
 
-export default function Container (props) {
-    return (
-        <ActionCableProvider cable={cable}>
-            <ChatRoom />
-        </ActionCableProvider>
-    )
+export default function Container(props) {
+  return (
+    <ActionCableProvider cable={cable}>
+      <ChatRoom />
+    </ActionCableProvider>
+  );
 }
 ```
 

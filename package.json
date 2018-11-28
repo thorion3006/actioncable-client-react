@@ -1,5 +1,5 @@
 {
-	"name": "actioncable-react-es6",
+	"name": "actioncable-client-react",
 	"keywords": [
 		"react",
 		"actioncable",
@@ -13,10 +13,10 @@
 	"main": "lib/index.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/thorion3006/actioncable-react-es6.git"
+		"url": "git+https://github.com/thorion3006/actioncable-client-react.git"
 	},
 	"bugs": {
-		"url": "https://github.com/thorion3006/actioncable-react-es6/issues"
+		"url": "https://github.com/thorion3006/actioncable-client-react/issues"
 	},
 	"author": "Sajeev Ramasamy <thorion3006@gmail.com>",
 	"license": "MIT",
