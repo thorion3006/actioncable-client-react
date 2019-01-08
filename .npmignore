@@ -1,5 +1,8 @@
 .npmignore
 
+# src directory
+/src
+
 # npm/yarn files
 yarn.lock
 .yarnclean

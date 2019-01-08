@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // Import context consumer
 import { Consumer } from "../ActionCableProvider";
 
-class ActionCable extends PureComponent {
+class ActionCableSubscriber extends PureComponent {
 
   static propTypes = {
     onReceived: PropTypes.func,
@@ -86,5 +86,5 @@ class ActionCable extends PureComponent {
 }
 
 export default props => (
-	<Consumer>{cable => <ActionCable {...props} cable={cable} />}</Consumer>
+	<Consumer>{cable => <ActionCableSubscriber {...props} cable={cable} />}</Consumer>
 );

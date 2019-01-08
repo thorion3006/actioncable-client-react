@@ -1,4 +1,4 @@
 import { ActionCableProvider } from "./ActionCableProvider";
-import ActionCable from "./ActionCable";
+import ActionCable from "./ActionCableSubscriber";
 
 export { ActionCable, ActionCableProvider };

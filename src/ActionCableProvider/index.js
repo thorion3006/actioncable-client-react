@@ -1,30 +1,35 @@
 import React, { Component, createContext } from "react";
 import PropTypes from "prop-types";
-import actioncable from "actioncable";
+
+import ActionCable from "actioncable";
 
 const { Provider, Consumer } = createContext({});
 
 class ActionCableProvider extends Component {
   constructor(props, context) {
     super(props, context);
-    if (this.props.cable) {
-      this.state = { cable: this.props.cable };
-    } else {
-      const cable = actioncable.createConsumer(this.props.url);
+    const { cable, url, token } = this.props
+    if (cable) {
       this.state = { cable };
+    } else {
+      const newCable = ActionCable.createConsumer(url, token);
+      this.state = { cable: newCable };
     }
   }
 
   static propTypes = {
     cable: PropTypes.object,
     url: PropTypes.string,
+    token: PropTypes.string,
     children: PropTypes.node.isRequired
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const { cable, url, token } = this.props
     if (
-      this.props.cable === prevProps.cable &&
-      this.props.url === prevProps.url
+      cable === prevProps.cable &&
+      url === prevProps.url &&
+      token === prevProps.token
     ) {
       return;
     }
@@ -33,11 +38,11 @@ class ActionCableProvider extends Component {
     this.state.cable.disconnect();
 
     // create or assign cable
-    if (this.props.cable) {
-      this.setState({ cable: this.props.cable });
-    } else {
-      const cable = actioncable.createConsumer(this.props.url);
+    if (cable) {
       this.setState({ cable });
+    } else {
+      const newCable = ActionCable.createConsumer(url, token);
+      this.setState({ cable: newCable });
     }
   }
 
