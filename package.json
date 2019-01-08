@@ -8,7 +8,7 @@
 		"websocket-consumer",
 		"actioncable-consumer"
 	],
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "A react wrapper for working with rails actioncable. Requires react v16.3 and above.",
 	"main": "lib/index.js",
 	"repository": {
