@@ -2,11 +2,11 @@ A react wrapper for working with rails actioncable. Requires react v16.3 and abo
 
 # Install
 
-`npm i --save actioncable-client-react`
+`npm i --save actioncable actioncable-client-react`
 
 or
 
-`yarn add actioncable-client-react`
+`yarn add actioncable actioncable-client-react`
 
 # Usage
 
