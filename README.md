@@ -2,6 +2,8 @@ A react wrapper for working with rails actioncable. Requires react v16.3 and abo
 
 # Install
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/thorion3006/actioncable-client-react.svg)](https://greenkeeper.io/)
+
 `npm i --save actioncable actioncable-client-react`
 
 or
